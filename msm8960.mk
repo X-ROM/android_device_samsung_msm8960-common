@@ -60,7 +60,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceSettings
 PRODUCT_PACKAGES += \
-    GalaxyS3Settings \
+    GalaxyS4Settings \
 
 # Misc
 PRODUCT_PACKAGES += \
