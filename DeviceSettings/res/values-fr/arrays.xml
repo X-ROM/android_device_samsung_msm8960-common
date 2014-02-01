@@ -15,16 +15,16 @@
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="mdnie_scenario_entries">
-        <item>Caméra (Par défaut)</item>
-        <item>Vidéo</item>
-        <item>Vidéo chaude</item>
-        <item>Video froide</item>
         <item>UI</item>
+        <item>Vidéo</item>
+        <item>Caméra</item>
         <item>Navigation</item>
         <item>Galerie</item>
         <item>VT</item>
+        <item>Outrepasser</item>
     </string-array>
     <string-array name="mdnie_mode_entries">
+        <item>Automatique</item>
         <item>Standard (Par défaut)</item>
         <item>Dynamique</item>
         <item>Naturel</item>
