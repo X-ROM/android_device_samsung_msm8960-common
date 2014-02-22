@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
     power.msm8960 \
     memtrack.msm8960
 
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    GalaxyS3Settings \
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
