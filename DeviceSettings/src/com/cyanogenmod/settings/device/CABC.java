@@ -47,7 +47,7 @@ public class CABC extends CheckBoxPreference implements OnPreferenceChangeListen
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_CABC, true) ? "1" : "0");
+        Utils.writeValue(FILE, sharedPrefs.getBoolean(DisplaySettings.KEY_CABC, true) ? "1" : "0");
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

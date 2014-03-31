@@ -48,7 +48,7 @@ public class PanelColorTemperature extends ListPreference implements OnPreferenc
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_PANEL_COLOR_TEMPERATURE, "2"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DisplaySettings.KEY_PANEL_COLOR_TEMPERATURE, "2"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

@@ -48,15 +48,15 @@ public class SensorsFragmentActivity extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.sensors_preferences);
 
-        PreferenceCategory prefs = (PreferenceCategory) findPreference(DeviceSettings.CATEGORY_TOUCHKEY);
+        PreferenceCategory prefs = (PreferenceCategory) findPreference(DisplaySettings.CATEGORY_TOUCHKEY);
         if (!sHasTouchkeyToggle) {
-            prefs.removePreference(findPreference(DeviceSettings.KEY_TOUCHKEY_LIGHT));
+            prefs.removePreference(findPreference(DisplaySettings.KEY_TOUCHKEY_LIGHT));
         }
         if (!sHasTouchkeyBLN) {
-            prefs.removePreference(findPreference(DeviceSettings.KEY_TOUCHKEY_BLN));
+            prefs.removePreference(findPreference(DisplaySettings.KEY_TOUCHKEY_BLN));
         }
         if (!sHasKeyboardToggle) {
-            prefs.removePreference(findPreference(DeviceSettings.KEY_KEYBOARD_LIGHT));
+            prefs.removePreference(findPreference(DisplaySettings.KEY_KEYBOARD_LIGHT));
         }
         if (prefs.getPreferenceCount() == 0) {
             getPreferenceScreen().removePreference(prefs);
@@ -71,20 +71,20 @@ public class SensorsFragmentActivity extends PreferenceFragment {
 
         Log.w(TAG, "key: " + key);
 
-        if (key.compareTo(DeviceSettings.KEY_USE_GYRO_CALIBRATION) == 0) {
+        if (key.compareTo(DisplaySettings.KEY_USE_GYRO_CALIBRATION) == 0) {
             boxValue = (((CheckBoxPreference)preference).isChecked() ? "1" : "0");
             Utils.writeValue(FILE_USE_GYRO_CALIB, boxValue);
-        } else if (key.compareTo(DeviceSettings.KEY_CALIBRATE_GYRO) == 0) {
+        } else if (key.compareTo(DisplaySettings.KEY_CALIBRATE_GYRO) == 0) {
             // when calibration data utilization is disablen and enabled back,
             // calibration is done at the same time by driver
             Utils.writeValue(FILE_USE_GYRO_CALIB, "0");
             Utils.writeValue(FILE_USE_GYRO_CALIB, "1");
             Utils.showDialog((Context)getActivity(), "Calibration done", "The gyroscope has been successfully calibrated!");
-        } else if (key.compareTo(DeviceSettings.KEY_TOUCHKEY_LIGHT) == 0) {
+        } else if (key.compareTo(DisplaySettings.KEY_TOUCHKEY_LIGHT) == 0) {
             Utils.writeValue(FILE_TOUCHKEY_TOGGLE, ((CheckBoxPreference)preference).isChecked() ? "255" : "0");
-        } else if (key.compareTo(DeviceSettings.KEY_TOUCHKEY_BLN) == 0) {
+        } else if (key.compareTo(DisplaySettings.KEY_TOUCHKEY_BLN) == 0) {
             Utils.writeValue(FILE_BLN_TOGGLE, ((CheckBoxPreference)preference).isChecked() ? "1" : "0");
-        } else if (key.compareTo(DeviceSettings.KEY_KEYBOARD_LIGHT) == 0) {
+        } else if (key.compareTo(DisplaySettings.KEY_KEYBOARD_LIGHT) == 0) {
             Utils.writeValue(FILE_KEYBOARD_TOGGLE, ((CheckBoxPreference)preference).isChecked() ? "255" : "0");
         }
 
@@ -97,19 +97,19 @@ public class SensorsFragmentActivity extends PreferenceFragment {
         // When use gyro calibration value is set to 1, calibration is done at the same time, which
         // means it is reset at each boot, providing wrong calibration most of the time at each reboot.
         // So we only set it to "0" if user wants it, as it defaults to 1 at boot
-        if (!sharedPrefs.getBoolean(DeviceSettings.KEY_USE_GYRO_CALIBRATION, true))
+        if (!sharedPrefs.getBoolean(DisplaySettings.KEY_USE_GYRO_CALIBRATION, true))
             Utils.writeValue(FILE_USE_GYRO_CALIB, "0");
 
         if (sHasTouchkeyToggle) {
-            Utils.writeValue(FILE_TOUCHKEY_TOGGLE, sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEY_LIGHT, true) ? "255" : "0");
+            Utils.writeValue(FILE_TOUCHKEY_TOGGLE, sharedPrefs.getBoolean(DisplaySettings.KEY_TOUCHKEY_LIGHT, true) ? "255" : "0");
         }
 
         if (sHasTouchkeyBLN) {
-            Utils.writeValue(FILE_BLN_TOGGLE, sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHKEY_BLN, true) ? "1" : "0");
+            Utils.writeValue(FILE_BLN_TOGGLE, sharedPrefs.getBoolean(DisplaySettings.KEY_TOUCHKEY_BLN, true) ? "1" : "0");
         }
 
         if (sHasKeyboardToggle) {
-            Utils.writeValue(FILE_KEYBOARD_TOGGLE, sharedPrefs.getBoolean(DeviceSettings.KEY_KEYBOARD_LIGHT, true) ? "255" : "0");
+            Utils.writeValue(FILE_KEYBOARD_TOGGLE, sharedPrefs.getBoolean(DisplaySettings.KEY_KEYBOARD_LIGHT, true) ? "255" : "0");
         }
 
     }

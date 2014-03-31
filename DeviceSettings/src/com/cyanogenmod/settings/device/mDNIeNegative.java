@@ -47,7 +47,7 @@ public class mDNIeNegative extends CheckBoxPreference implements OnPreferenceCha
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getBoolean(DeviceSettings.KEY_MDNIE_NEGATIVE, false) ? "1" : "0");
+        Utils.writeValue(FILE, sharedPrefs.getBoolean(DisplaySettings.KEY_MDNIE_NEGATIVE, false) ? "1" : "0");
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

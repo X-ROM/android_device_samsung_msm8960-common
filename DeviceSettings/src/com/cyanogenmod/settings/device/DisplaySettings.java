@@ -32,7 +32,7 @@ import com.cyanogenmod.settings.device.R;
 
 import java.util.ArrayList;
 
-public class DeviceSettings extends FragmentActivity {
+public class DisplaySettings extends FragmentActivity {
 
     public static final String SHARED_PREFERENCES_BASENAME = "com.cyanogenmod.settings.device";
     public static final String ACTION_UPDATE_PREFERENCES = "com.cyanogenmod.settings.device.UPDATE";
@@ -170,7 +170,7 @@ public class DeviceSettings extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
-            DeviceSettings.this.onBackPressed();
+            DisplaySettings.this.onBackPressed();
         default:
             return super.onOptionsItemSelected(item);
         }

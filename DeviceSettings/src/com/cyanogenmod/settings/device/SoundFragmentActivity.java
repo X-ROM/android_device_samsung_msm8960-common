@@ -65,7 +65,7 @@ public class SoundFragmentActivity extends PreferenceFragment {
         Log.w(TAG, "key: " + key);
         if (preference == mVocEpXgain) {
             SystemProperties.set(PROP_VOC_EP_XGAIN, mVocEpXgain.isChecked() ? "1" : "0");
-        } else if (key.compareTo(DeviceSettings.KEY_USE_DOCK_AUDIO) == 0) {
+        } else if (key.compareTo(DisplaySettings.KEY_USE_DOCK_AUDIO) == 0) {
             boxValue = (((CheckBoxPreference)preference).isChecked() ? "1" : "0");
             Intent i = new Intent("com.cyanogenmod.settings.SamsungDock");
             i.putExtra("data", boxValue);
@@ -78,7 +78,7 @@ public class SoundFragmentActivity extends PreferenceFragment {
 
     public static void restore(Context context) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean dockAudio = sharedPrefs.getBoolean(DeviceSettings.KEY_USE_DOCK_AUDIO, false);
+        boolean dockAudio = sharedPrefs.getBoolean(DisplaySettings.KEY_USE_DOCK_AUDIO, false);
         Intent i = new Intent("com.cyanogenmod.settings.SamsungDock");
         i.putExtra("data", (dockAudio? "1" : "0"));
         ActivityManagerNative.broadcastStickyIntent(i, null, UserHandle.USER_ALL);

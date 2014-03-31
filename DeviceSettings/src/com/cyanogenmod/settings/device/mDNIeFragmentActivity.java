@@ -36,34 +36,34 @@ public class mDNIeFragmentActivity extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.mdnie_preferences);
 
-        PreferenceCategory prefs = (PreferenceCategory) findPreference(DeviceSettings.CATEGORY_MDNIE);
+        PreferenceCategory prefs = (PreferenceCategory) findPreference(DisplaySettings.CATEGORY_MDNIE);
 
-        mmDNIeScenario = (mDNIeScenario) findPreference(DeviceSettings.KEY_MDNIE_SCENARIO);
+        mmDNIeScenario = (mDNIeScenario) findPreference(DisplaySettings.KEY_MDNIE_SCENARIO);
         if (!mDNIeScenario.isSupported()) {
             prefs.removePreference(mmDNIeScenario);
         }
 
-        mmDNIeMode = (mDNIeMode) findPreference(DeviceSettings.KEY_MDNIE_MODE);
+        mmDNIeMode = (mDNIeMode) findPreference(DisplaySettings.KEY_MDNIE_MODE);
         if (!mDNIeMode.isSupported()) {
             prefs.removePreference(mmDNIeMode);
         }
 
-        mmDNIeOutdoor = (mDNIeOutdoor) findPreference(DeviceSettings.KEY_MDNIE_OUTDOOR);
+        mmDNIeOutdoor = (mDNIeOutdoor) findPreference(DisplaySettings.KEY_MDNIE_OUTDOOR);
         if (!mDNIeOutdoor.isSupported()) {
             prefs.removePreference(mmDNIeOutdoor);
         }
 
-        mmDNIeNegative = (mDNIeNegative) findPreference(DeviceSettings.KEY_MDNIE_NEGATIVE);
+        mmDNIeNegative = (mDNIeNegative) findPreference(DisplaySettings.KEY_MDNIE_NEGATIVE);
         if (!mDNIeNegative.isSupported()) {
             prefs.removePreference(mmDNIeNegative);
         }
 
-        mCABC = (CABC) findPreference(DeviceSettings.KEY_CABC);
+        mCABC = (CABC) findPreference(DisplaySettings.KEY_CABC);
         if (!CABC.isSupported()) {
             prefs.removePreference(mCABC);
         }
 
-        mPanelColor = (PanelColorTemperature) findPreference(DeviceSettings.KEY_PANEL_COLOR_TEMPERATURE);
+        mPanelColor = (PanelColorTemperature) findPreference(DisplaySettings.KEY_PANEL_COLOR_TEMPERATURE);
         if (!PanelColorTemperature.isSupported()) {
             prefs.removePreference(mPanelColor);
         }
@@ -72,8 +72,8 @@ public class mDNIeFragmentActivity extends PreferenceFragment {
             getPreferenceScreen().removePreference(prefs);
         }
 
-        prefs = (PreferenceCategory) findPreference(DeviceSettings.CATEGORY_TOUCHSCREEN);
-        mTouchscreenSensitivity = (TouchscreenSensitivity) findPreference(DeviceSettings.KEY_TOUCHSCREEN_SENSITIVITY);
+        prefs = (PreferenceCategory) findPreference(DisplaySettings.CATEGORY_TOUCHSCREEN);
+        mTouchscreenSensitivity = (TouchscreenSensitivity) findPreference(DisplaySettings.KEY_TOUCHSCREEN_SENSITIVITY);
         if (!TouchscreenSensitivity.isSupported()) {
             prefs.removePreference(mTouchscreenSensitivity);
         }
