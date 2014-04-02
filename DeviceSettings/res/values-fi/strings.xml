@@ -14,7 +14,7 @@
      limitations under the License.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Galaxy S III-asetukset</string>
+    <string name="app_name">Advanced settings</string>
     <string name="screen_colors_title">Värit</string>
     <string name="category_mdnie_title">Näyttö</string>
     <string name="mdnie_scenario_title_head">Skenaario</string>
